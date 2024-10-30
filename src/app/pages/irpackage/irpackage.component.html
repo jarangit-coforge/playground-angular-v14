@@ -1,0 +1,40 @@
+<h1 class="">Roaming Package</h1>
+<div class="row">
+  <div class="col-8">
+    <div class="my-card">
+      <ejs-maps
+        [layers]="layerOptions"
+        [titleSettings]="titleOptions"
+        [legendSettings]="legendOptions"
+      ></ejs-maps>
+      <!-- county -->
+
+      <div class="p-2">
+        <div
+          *ngFor="let county of countries"
+          class="d-flex align-items-center"
+          style="gap: 16px"
+        >
+          <img src="{{ county.flag }}" alt="" width="20px" />
+          <div>{{ county.name }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="position-relative my-card">
+      <div
+        class="position-absolute"
+        style="
+          top: 52%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          z-index: 9999999999;
+        "
+      >
+        <!-- <div style="font-size: 50px; font-weight: bold">91%</div> -->
+      </div>
+      <canvas id="MyChart">{{ chart }}</canvas>
+    </div>
+  </div>
+</div>

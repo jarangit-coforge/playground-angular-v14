@@ -1,0 +1,22 @@
+<div class="NgxEditor__Wrapper">
+  <ngx-editor-menu [editor]="editor"
+  [toolbar]="toolbar"
+  > </ngx-editor-menu>
+  <ngx-editor
+    [editor]="editor"
+    [(ngModel)]="html"
+    [disabled]="false"
+    [placeholder]="'Type here...'"
+
+  ></ngx-editor>
+</div>
+<pre
+  style="
+    background-color: rgb(63, 63, 63);
+    color: rgb(212, 212, 212);
+    padding: 16px;
+    border-radius: 8px;
+    min-height: 200px;
+  "
+  >{{ html }}</pre
+>

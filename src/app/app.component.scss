@@ -1,0 +1,13 @@
+.menuList {
+  display: flex;
+  list-style-type: none;
+  padding: 16px;
+  gap: 4px;
+}
+
+.menuItem {
+  background-color: gainsboro;
+  padding: 8px 16px;
+  border-radius: 8px;
+  color: black;
+}

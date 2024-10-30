@@ -1,0 +1,57 @@
+.test {
+  color: red;
+  background-color: red;
+}
+
+.NgxEditor__Wrapper {
+  border-color: rgb(225, 225, 225);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+::ng-deep .NgxEditor__MenuBar {
+  color: rgb(54, 71, 0) !important;
+  background-color: rgb(245, 251, 224) !important;
+  border-color: rgb(225, 225, 225);
+}
+
+::ng-deep .NgxEditor__MenuItem.NgxEditor__MenuItem--Icon {
+  width: 40px !important;
+  height: 40px !important;
+}
+
+::ng-deep .NgxEditor__Wrapper .NgxEditor .NgxEditor__Content {
+  min-height: 200px !important;
+}
+
+
+
+// style v2
+// ::ng-deep .NgxEditor__Wrapper {
+//   background-color: #ebebeb !important;
+//   border: none !important;
+//   border-radius: 8px !important;
+//   overflow: hidden;
+// }
+
+// ::ng-deep .NgxEditor__Wrapper .NgxEditor__MenuBar {
+//   background-color: #ebebeb !important;
+
+// }
+
+// ::ng-deep .NgxEditor__Wrapper .NgxEditor {
+//   background-color: #ebebeb !important;
+// }
+
+// ::ng-deep .NgxEditor__Wrapper .NgxEditor {
+//   background-color: #ebebeb !important;
+// }
+
+// ::ng-deep .NgxEditor__Content {
+//   background-color: white;
+//   margin: 50px 200px;
+//   border-radius: 4px;
+//   height: 80vh;
+//   max-width: 100vh;
+//   padding: 16px !important;
+// }

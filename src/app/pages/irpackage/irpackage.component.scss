@@ -1,0 +1,11 @@
+.my-card {
+  background-color: white !important;
+  border-radius: 16px;
+  overflow: hidden;
+  height: 100%;
+  padding: 8px;
+}
+
+.grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
