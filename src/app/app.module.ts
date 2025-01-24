@@ -12,6 +12,7 @@ import { MapsModule } from '@syncfusion/ej2-angular-maps';
 import { NgChartjsModule } from 'ng-chartjs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FinderComponent } from './pages/finder/finder.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [SafeHtmlPipe, AppComponent],
@@ -23,6 +24,7 @@ import { FinderComponent } from './pages/finder/finder.component';
     MapsModule,
     NgChartjsModule,
     BrowserAnimationsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],
