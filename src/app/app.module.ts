@@ -10,14 +10,11 @@ import { SafeHtmlPipe } from 'src/pipe/safe-html-pipe.pipe';
 import { IRPackageComponent } from './pages/irpackage/irpackage.component';
 import { MapsModule } from '@syncfusion/ej2-angular-maps';
 import { NgChartjsModule } from 'ng-chartjs';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FinderComponent } from './pages/finder/finder.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    PlaygroundComponent,
-    SafeHtmlPipe,
-    IRPackageComponent
-  ],
+  declarations: [SafeHtmlPipe, AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -25,8 +22,9 @@ import { NgChartjsModule } from 'ng-chartjs';
     FormsModule,
     MapsModule,
     NgChartjsModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

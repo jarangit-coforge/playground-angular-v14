@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const dir = './src/app'; // ที่อยู่โปรเจกต์ของคุณ
+const dir = './src/app/pages'; // ที่อยู่โปรเจกต์ของคุณ
 
 function convertToStandalone(filePath) {
   const content = fs.readFileSync(filePath, 'utf8');
@@ -18,9 +18,21 @@ function convertToStandalone(filePath) {
   }
 }
 
-// ค้นหาไฟล์ทั้งหมดใน directory
-fs.readdirSync(dir).forEach(file => {
-  if (file.endsWith('.component.ts')) {
-    convertToStandalone(path.join(dir, file));
-  }
-});
+function findComponentsInDir(dirPath) {
+  // อ่านไฟล์ใน directory ปัจจุบัน
+  fs.readdirSync(dirPath).forEach(file => {
+    const fullPath = path.join(dirPath, file);
+    const stat = fs.statSync(fullPath);
+
+    // ถ้าเป็น directory ให้เรียกใช้งานฟังก์ชันนี้ซ้ำ
+    if (stat.isDirectory()) {
+      findComponentsInDir(fullPath);
+    } else if (file.endsWith('.component.ts')) {
+      // ถ้าเป็น component ให้แปลง
+      convertToStandalone(fullPath);
+    }
+  });
+}
+
+// เริ่มค้นหา components ใน pages directory
+findComponentsInDir(dir);

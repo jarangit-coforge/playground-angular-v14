@@ -1,10 +1,13 @@
+import { CommonModule } from '@angular/common';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormGroup, FormControl, AbstractControl } from '@angular/forms';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import hljs from 'highlight.js';
 import { Editor, toHTML, Toolbar, Validators } from 'ngx-editor';
+import { ShareCommonModule } from 'src/app/common/common.module';
 
 @Component({
+  standalone: true, imports: [ShareCommonModule],
   selector: 'app-playground',
   templateUrl: './playground.component.html',
   styleUrls: ['./playground.component.scss'],

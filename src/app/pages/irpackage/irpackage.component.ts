@@ -3,8 +3,14 @@ import * as worldMapData from '../../../assets/worldMap.json';
 // import * as Chart from 'chart.js';
 import { NgChartjsDirective } from 'ng-chartjs';
 import Chart from 'chart.js/auto';
+import { CommonModule } from '@angular/common';
+import { MapsModule } from '@syncfusion/ej2-angular-maps';
+import { ShareCommonModule } from 'src/app/common/common.module';
 
 @Component({
+  standalone: true, imports: [
+    ShareCommonModule,
+  ],
   selector: 'app-irpackage',
   templateUrl: './irpackage.component.html',
   styleUrls: ['./irpackage.component.scss']

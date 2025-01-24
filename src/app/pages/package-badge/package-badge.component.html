@@ -1,0 +1,136 @@
+<div
+  class="bg-white border-1 p-4 rounded-4 row mx-auto"
+  style="max-width: 900px"
+>
+  <!-- preview -->
+  <div class="bg-light rounded-3 p-5 col-6">
+    <!-- package card -->
+    <div class="position-relative bg-white rounded-5 package-card py-5 px-4">
+      <!-- badge -->
+      <div class="position-absolute" [ngClass]="previewBadge.position">
+        <div class="badge-preview" [ngClass]="previewBadge.color">
+          <span class="badge-icon">{{ previewBadge.icon }}</span>
+          <span class="badge-text">{{ previewBadge.text }}</span>
+        </div>
+      </div>
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="d-flex align-items-center">
+          <div class="ms-3">
+            <h4 class="mb-0">Starter</h4>
+            <p class="mb-0">For small teams or side projects</p>
+          </div>
+        </div>
+        <div class="d-flex align-items-center">
+          <h4 class="mb-0">$9</h4>
+          <p class="mb-0 ms-2">/mo</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- controller -->
+  <div class="col-6">
+    <div class="container">
+      <h2>Customize Badge</h2>
+
+      <!-- template -->
+      <!-- <mat-form-field appearance="fill">
+        <mat-label>Favorite food</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let food of foods" [value]="food.value">
+            {{ food.viewValue }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field> -->
+
+      <!-- Reactive Form -->
+      <form [formGroup]="badgeForm" (ngSubmit)="onSubmit()">
+        <!-- Badge Text -->
+        <div class="form-group">
+          <label for="badgeText">Badge Text</label>
+          <input
+            id="badgeText"
+            type="text"
+            class="form-control"
+            formControlName="badgeText"
+            placeholder="Enter Badge Text"
+          />
+          <small
+            *ngIf="
+              badgeForm.get('badgeText')?.invalid &&
+              badgeForm.get('badgeText')?.touched
+            "
+            class="text-danger"
+          >
+            Max 15 characters are allowed.
+          </small>
+        </div>
+
+        <!-- Icon Selection -->
+        <div class="form-group">
+          <label for="iconSelect">Select Icon</label>
+          <div class="icon-grid">
+            <button
+              *ngFor="let icon of icons"
+              type="button"
+              class="icon-button"
+              [class.selected]="badgeForm.get('selectedIcon')?.value === icon"
+              (click)="
+                badgeForm.get('selectedIcon')?.setValue(icon); updatePreview()
+              "
+            >
+              {{ icon }}
+            </button>
+          </div>
+          <small
+            *ngIf="
+              badgeForm.get('selectedIcon')?.invalid &&
+              badgeForm.get('selectedIcon')?.touched
+            "
+            class="text-danger"
+          >
+            Please select an icon.
+          </small>
+        </div>
+
+        <!-- Color -->
+        <div class="mt-4">
+          <strong>Color</strong>
+          <mat-radio-group
+            formControlName="selectedColor"
+            aria-label="Select an option"
+            style="gap: 4px 16px; display: flex; flex-wrap: wrap"
+          >
+            <ng-container *ngFor="let color of colors">
+              <mat-radio-button color="primary" [value]="color.value">{{
+                color.label
+              }}</mat-radio-button>
+            </ng-container>
+          </mat-radio-group>
+        </div>
+
+        <!-- Position -->
+        <div class="mt-4">
+          <strong>Position</strong>
+          <mat-radio-group
+            formControlName="selectedPosition"
+            aria-label="Select an option"
+            style="gap: 4px 16px; display: flex; flex-wrap: wrap"
+          >
+            <ng-container *ngFor="let item of positionOptions">
+              <mat-radio-button color="primary" [value]="item.value">{{
+                item.label
+              }}</mat-radio-button>
+            </ng-container>
+          </mat-radio-group>
+        </div>
+
+        <!-- Form Actions -->
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">Save</button>
+          <button type="button" class="btn btn-secondary">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
