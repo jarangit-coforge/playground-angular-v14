@@ -1,0 +1,108 @@
+.test {
+  color: red;
+  background-color: red;
+}
+
+.NgxEditor__Wrapper {
+  border-color: rgb(225, 225, 225);
+  border-radius: 8px;
+  overflow: hidden;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+::ng-deep .NgxEditor__MenuBar {
+  color: rgb(54, 71, 0) !important;
+  background-color: rgb(245, 251, 224) !important;
+  border-color: rgb(225, 225, 225);
+}
+
+::ng-deep .NgxEditor__MenuItem.NgxEditor__MenuItem--Icon {
+  width: 40px !important;
+  height: 40px !important;
+}
+
+::ng-deep .NgxEditor__Wrapper .NgxEditor .NgxEditor__Content {
+  min-height: 200px !important;
+}
+
+
+
+// style v2
+// ::ng-deep .NgxEditor__Wrapper {
+//   background-color: #ebebeb !important;
+//   border: none !important;
+//   border-radius: 8px !important;
+//   overflow: hidden;
+// }
+
+// ::ng-deep .NgxEditor__Wrapper .NgxEditor__MenuBar {
+//   background-color: #ebebeb !important;
+
+// }
+
+// ::ng-deep .NgxEditor__Wrapper .NgxEditor {
+//   background-color: #ebebeb !important;
+// }
+
+// ::ng-deep .NgxEditor__Wrapper .NgxEditor {
+//   background-color: #ebebeb !important;
+// }
+
+// ::ng-deep .NgxEditor__Content {
+//   background-color: white;
+//   margin: 50px 200px;
+//   border-radius: 4px;
+//   height: 80vh;
+//   max-width: 100vh;
+//   padding: 16px !important;
+// }
+
+.simulator {
+  border: 12px solid black;
+  width: 375px;
+  max-height: 870px;
+  height: 80vh;
+  border-radius: 32px;
+  padding: 16px;
+  background-color: white;
+  overflow-y: auto;
+}
+
+.simulator {
+  overflow: auto;
+  /* Allows scrolling */
+}
+
+/* Hide scrollbar for Chrome, Edge, and Safari */
+.simulator::-webkit-scrollbar {
+  display: none;
+}
+
+/* For Firefox */
+.simulator {
+  scrollbar-width: none;
+  /* Hides scrollbar */
+}
+
+/* For Internet Explorer 10+ */
+.simulator {
+  -ms-overflow-style: none;
+  /* Hides scrollbar */
+}
+
+textarea {
+  border: 2px solid rgb(182, 182, 182);
+  outline: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+}
+
+button {
+  color: white;
+  background-color: black;
+  padding: 8px 24px;
+  border-radius: 8px;
+  border: none;
+  font-weight: bold;
+}
